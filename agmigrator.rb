@@ -5,20 +5,20 @@
 class Agmigrator < Formula
   desc "Akeyless Gateway Migrator"
   homepage "https://github.com/akeyless-community/akeyless-gateway-migrator"
-  version "1.0.3"
+  version "1.0.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.3/akeyless-gateway-migrator_Darwin_x86_64.tar.gz"
-      sha256 "ca171d299bb968c6341d2a650c2b37f139bb22a11c6b0d585f681556ab34dd9e"
+    if Hardware::CPU.arm?
+      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.4/akeyless-gateway-migrator_Darwin_arm64.tar.gz"
+      sha256 "cecdbe3c77de98dbfae813e032d91d2974d76fb5fe47bb14edcfeb40692088b8"
 
       def install
         bin.install "akeyless-gateway-migrator"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.3/akeyless-gateway-migrator_Darwin_arm64.tar.gz"
-      sha256 "4cb5ff9d0214454b02c879e788b07fa47a9e228ec0e1e396f15a4321e9b74bc5"
+    if Hardware::CPU.intel?
+      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.4/akeyless-gateway-migrator_Darwin_x86_64.tar.gz"
+      sha256 "9f1660be4cb47431ab605f8c4e1601b229701cf22a212e7048327b108e94df51"
 
       def install
         bin.install "akeyless-gateway-migrator"
@@ -27,17 +27,17 @@ class Agmigrator < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.3/akeyless-gateway-migrator_Linux_x86_64.tar.gz"
-      sha256 "db721134d898b9325d8aae968fa2e53e9b1cbfe1f3653f7fe7682e239d575599"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.4/akeyless-gateway-migrator_Linux_arm64.tar.gz"
+      sha256 "06114df6c0961d8833547d39150657f0f255d57b01e0e176ade11fc886724296"
 
       def install
         bin.install "akeyless-gateway-migrator"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.3/akeyless-gateway-migrator_Linux_arm64.tar.gz"
-      sha256 "066974fc9bcf70c7f697a5436b5e693a52a543835b9f5656b0e0b19dcb4f0897"
+    if Hardware::CPU.intel?
+      url "https://github.com/akeyless-community/akeyless-gateway-migrator/releases/download/1.0.4/akeyless-gateway-migrator_Linux_x86_64.tar.gz"
+      sha256 "034b4163e5dfc1422aa1ef3360d044484764cc02491ac6463fbf854ce3494c1b"
 
       def install
         bin.install "akeyless-gateway-migrator"
